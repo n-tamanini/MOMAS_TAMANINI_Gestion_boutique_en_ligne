@@ -1,0 +1,18 @@
+Gestion d'une boutique de vêtements en ligne 
+
+
+- Gestion des stocks de vêtements  
+
+- Comptes utilisateur 
+
+- Gestion des commandes 
+
+- Tri des vêtements par catégorie 
+
+- Ajout, modification, suppression de vêtements (back office) 
+
+Service :  
+
+- Front office : vente des vêtements / création - connexion compte  
+
+- Back office : gestion des stocks, ajout, modification, suppression des vêtements / gestion des expéditions 
