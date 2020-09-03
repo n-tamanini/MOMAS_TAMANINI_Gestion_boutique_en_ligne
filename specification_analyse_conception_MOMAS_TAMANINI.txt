@@ -44,11 +44,25 @@ DECRIPTION TEXTUELLES DES REQUETES DE SUPPRESSION
 //Supprimer une ligne de la table vetement (suppression d'un vêtement)
 DELETE FROM vetement WHERE id_vetement=1;
 
-//Remplir une ligne de la table utilisateur
-DELETE FROM utilisateur WHERE id_utilisateur=1;
+//Supprimer la table couleur
+DROP TABLE  couleur;
 
 2 requêtes impliquant 2 tables:
 
 2 requêtes impliquant plus de 2 tables:
 
 DESCRIPTION TEXTUELLES DES REQUETES DE CONSULTATION
+
+5 requêtes impliquant 1 table dont 1 avec un group By et une avec un Order By:
+//Trier les vêtements par ordre croissant du prix
+SELECT nom, prix FROM vetement ORDER BY prix; 
+
+//Proposer des publicités selon la journée saint de la personne
+SELECT adresse, nom, prenom FROM utilisateur GROUP BY prenom;
+
+//Filtrer par gamme de prix les vêtements 
+SELECT prix, nom_vetement FORM vetement WHERE prix BETWEEN 20 AND 40;
+
+//
+
+
