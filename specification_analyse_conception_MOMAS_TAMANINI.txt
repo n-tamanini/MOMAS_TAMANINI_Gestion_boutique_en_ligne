@@ -101,3 +101,16 @@ SELECT prix, nom_vetement FROM vetement WHERE prix = 30;
 
 DICTIONNAIRE DE DONNEES MERISE
 
+description textuelles des associations
+
+Nous avons 6 tables dans notre SGBD eshop. Parmis cela, nous avons la table vêtement qui contient les noms, id, descriptions, prix et quantité du vêtement. 
+Ces vêtements sont choisis par un utilisateur. Nous avons donc une association Utilisateur -- Choisit -- vetement.
+Un utilisateur peut choisir entre 0 à n vêtements.
+
+L'utilisateur, après avoir choisi ses vetements, peut passer une ou plusieurs commandes.
+
+Les vêtements ont aussi des caractéristiques telles qu'une categorie, une taille, une couleur. Nous avons définis pour optimiser la recherche sur le SGBD 1 catégorie, 1 taille et 1 couleur pour 1 vetement.
+Une categorie peut avoir plusieurs tailles, de même que plusieurs couleurs. La visualisation des couleurs de vêtement pourra se faire que lorsqu'on filtre les vetements par catégorie ou lorsqu'on applique aucun filtre. Nous partons du principe que pour chercher un vetement d'une certaine taille, il faut chercher par categorie de vêtement.
+
+Si il n'y a plus de vêtements en stock dans la table vetement (caractérisé par son attribut quantite_vetement), des vetements sont commandés pour reapprovisionner le stock.
+
