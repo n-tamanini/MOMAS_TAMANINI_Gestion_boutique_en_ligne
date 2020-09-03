@@ -27,15 +27,26 @@ Vous pouvez trouver ci-joins des exemples:
 
 2 requêtes impliquant 1 table:
 
-//Remplir une ligne de la table vetement (ajout d'un vetement)
-INSERT INTO vetement (id_vetement#, nom_vetement, description_vetement, prix_vetement) VALUES (1,'blazzer en cachmire', 'blazzer de qualité, waterproof', 19.99);
-
 //Remplir une ligne de la table utilisateur
 INSERT INTO utilisateur (id_utilisateur#, nom_utilisateur, prenom_utilisateur, adresse_utilisateur, email_utilisateur) VALUES (1, 'Spears', 'Britney', '65 avenue de Hollywood', 'b.spears@gmail..com');
 
+//Reduction de 10% sur tout les vetements
+UPDATE vetement SET prix_vetement =  prix_vetement * 0.90;
+
+//Reduction de 20% sur tout les vetements dont le prix est supérieur à 80€
+UPDATE vetement SET prix_vetement =  prix_vetement * 0.80 WHERE prix_vetement >= 80;
+
 2 requêtes impliquant 2 tables:
 
-// Update prix des vêtements de taille XXL
+// Update lorsqu'on passe une commande pour se re-approvisionner
+/****************************************/
+UPDATE vetement, commande
+SET vetement.quantite_vetement = vetement.quantite_vetement + 50,
+    commande.quantite_commandee = commande.quantite_commandee - 50
+WHERE
+    Books.BookID = Orders.BookID
+    AND Orders.OrderID = 1002;
+
 UPDATE vetement
 SET    prix = prix*0.80
 WHERE nom_taille = (SELECT  PRP_ID
@@ -43,6 +54,7 @@ WHERE nom_taille = (SELECT  PRP_ID
                     JOIN T_CLIENT C 
                          ON C.CLI_NOM = P.PRP_NOM
                         AND C.CLI_PRENOM = P.PRP_PRENOM)
+/**********************************/
 
 2 requêtes impliquant plus de 2 tables:
 
