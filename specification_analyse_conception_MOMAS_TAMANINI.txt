@@ -63,6 +63,20 @@ SELECT adresse, nom, prenom FROM utilisateur GROUP BY prenom;
 //Filtrer par gamme de prix les vêtements 
 SELECT prix, nom_vetement FORM vetement WHERE prix BETWEEN 20 AND 40;
 
-//
+//Lister les vêtements dont le prix est inférieur à 30€.
+SELECT prix, nom_vetement FROM vetement WHERE prix <31;
 
+//Lister les vêtements dont le prix est égale à 30€.
+SELECT prix, nom_vetement FROM vetement WHERE prix = 30;
+
+
+2 requêtes impliquant 2 tables:
+// Trier les vêtements par la couleur rouge
+
+// Trier les vêtements par catégorie
+
+2 requêtes impliquant plus de 2 tables:
+
+
+DICTIONNAIRE DE DONNEES MERISE
 
