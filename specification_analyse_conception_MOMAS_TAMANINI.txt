@@ -35,6 +35,15 @@ INSERT INTO utilisateur (id_utilisateur#, nom_utilisateur, prenom_utilisateur, a
 
 2 requêtes impliquant 2 tables:
 
+// Update prix des vêtements de taille XXL
+UPDATE vetement
+SET    prix = prix*0.80
+WHERE nom_taille = (SELECT  PRP_ID
+                 FROM   T_PROSPECT P
+                    JOIN T_CLIENT C 
+                         ON C.CLI_NOM = P.PRP_NOM
+                        AND C.CLI_PRENOM = P.PRP_PRENOM)
+
 2 requêtes impliquant plus de 2 tables:
 
 
