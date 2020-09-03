@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* Nom de SGBD :  ORACLE Version 10gR2                          */
-/* Date de création :  03/09/2020 11:19:04                      */
+/* Date de création :  03/09/2020 12:15:19                      */
 /*==============================================================*/
 
 
@@ -98,8 +98,8 @@ create table CATEGORIE  (
 /*==============================================================*/
 create table CHOISIT  (
    ID_VETEMENT          NUMBER(4)                       not null,
-   ID_USER              NUMBER(4)                       not null,
-   constraint PK_CHOISIT primary key (ID_VETEMENT, ID_USER)
+   ID_UTILISATEUR       NUMBER(4)                       not null,
+   constraint PK_CHOISIT primary key (ID_VETEMENT, ID_UTILISATEUR)
 );
 
 /*==============================================================*/
@@ -113,7 +113,7 @@ create index CHOISIT_FK on CHOISIT (
 /* Index : CHOISIT2_FK                                          */
 /*==============================================================*/
 create index CHOISIT2_FK on CHOISIT (
-   ID_USER ASC
+   ID_UTILISATEUR ASC
 );
 
 /*==============================================================*/
@@ -121,7 +121,7 @@ create index CHOISIT2_FK on CHOISIT (
 /*==============================================================*/
 create table COMMANDE  (
    ID_COMMANDE          NUMBER(4)                       not null,
-   ID_USER              NUMBER(4)                       not null,
+   ID_UTILISATEUR       NUMBER(4)                       not null,
    ETAT_COMMANDE        VARCHAR2(30)                    not null,
    PRIX_COMMANDE        NUMBER                          not null,
    constraint PK_COMMANDE primary key (ID_COMMANDE)
@@ -131,7 +131,7 @@ create table COMMANDE  (
 /* Index : PASSE_FK                                             */
 /*==============================================================*/
 create index PASSE_FK on COMMANDE (
-   ID_USER ASC
+   ID_UTILISATEUR ASC
 );
 
 /*==============================================================*/
@@ -227,13 +227,12 @@ create table TAILLE  (
 /* Table : UTILISATEUR                                          */
 /*==============================================================*/
 create table UTILISATEUR  (
-   ID_USER              NUMBER(4)                       not null,
+   ID_UTILISATEUR       NUMBER(4)                       not null,
    NOM_UTILISATEUR      CHAR(30)                        not null,
-   PRENOM               VARCHAR2(30)                    not null,
-   ADRESSE              VARCHAR2(80)                    not null,
-   EMAIL                VARCHAR2(50)                    not null,
-   ATTRIBUT_6           CHAR(10),
-   constraint PK_UTILISATEUR primary key (ID_USER)
+   PRENOM_UTILISATEUR   VARCHAR2(30)                    not null,
+   ADRESSE_UTILISATEUR  VARCHAR2(80)                    not null,
+   EMAIL_UTILISATEUR    VARCHAR2(50)                    not null,
+   constraint PK_UTILISATEUR primary key (ID_UTILISATEUR)
 );
 
 /*==============================================================*/
@@ -246,8 +245,8 @@ create table VETEMENT  (
       constraint CKC_ID_TAILLE_VETEMENT check (ID_TAILLE between 1 and 6),
    ID_CATEGORIE         NUMBER(4)                       not null,
    NOM_VETEMENT         VARCHAR2(30)                    not null,
-   DESCRIPTION          CLOB                            not null,
-   PRIX                 NUMBER                          not null,
+   DESCRIPTION_VETEMENT CLOB                            not null,
+   PRIX_VETEMENT        NUMBER                          not null,
    constraint PK_VETEMENT primary key (ID_VETEMENT)
 );
 
@@ -277,12 +276,12 @@ alter table CHOISIT
       references VETEMENT (ID_VETEMENT);
 
 alter table CHOISIT
-   add constraint FK_CHOISIT_CHOISIT2_UTILISAT foreign key (ID_USER)
-      references UTILISATEUR (ID_USER);
+   add constraint FK_CHOISIT_CHOISIT2_UTILISAT foreign key (ID_UTILISATEUR)
+      references UTILISATEUR (ID_UTILISATEUR);
 
 alter table COMMANDE
-   add constraint FK_COMMANDE_PASSE_UTILISAT foreign key (ID_USER)
-      references UTILISATEUR (ID_USER);
+   add constraint FK_COMMANDE_PASSE_UTILISAT foreign key (ID_UTILISATEUR)
+      references UTILISATEUR (ID_UTILISATEUR);
 
 alter table CONTIENT_COULEUR
    add constraint FK_CONTIENT_CONTIENT_CATEGORI foreign key (ID_CATEGORIE)
