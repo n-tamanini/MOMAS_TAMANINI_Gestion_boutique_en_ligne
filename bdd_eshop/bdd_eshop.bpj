@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{C6A247E6-9DCE-4A1E-99EA-DE21E1BB5522}" Label="" LastModificationDate="1599126381" Name="bdd_eshop" Objects="3" Symbols="1" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" signature="PRJ_MODEL_XML" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{C6A247E6-9DCE-4A1E-99EA-DE21E1BB5522}" Label="" LastModificationDate="1599143805" Name="bdd_eshop" Objects="3" Symbols="0" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" signature="PRJ_MODEL_XML" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -456,7 +456,7 @@ Shadow=0</a:DisplayPreferences>
 <a:Code>MCD_ESHOP</a:Code>
 <a:CreationDate>1598959994</a:CreationDate>
 <a:Creator>n.tamanini</a:Creator>
-<a:ModificationDate>1599126381</a:ModificationDate>
+<a:ModificationDate>1599143805</a:ModificationDate>
 <a:Modifier>n.tamanini</a:Modifier>
 <a:Location>file:///%[PRJ_ROOT_DIR]%/MCD_eshop.mcd</a:Location>
 <a:Extension>mcd</a:Extension>
