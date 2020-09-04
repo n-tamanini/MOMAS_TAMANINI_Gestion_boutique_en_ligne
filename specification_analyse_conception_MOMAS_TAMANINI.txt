@@ -112,12 +112,13 @@ SELECT prix, nom_vetement FROM vetement WHERE prix <31;
 SELECT prix, nom_vetement FROM vetement WHERE prix = 30;
 
 
-2 requêtes impliquant 2 tables:
+5 requêtes impliquant 2 tables:
 // Trier les vêtements par la couleur rouge
+SELECT nom_vetement, prix_vetement, quantite_vetement, nom_couleur 
 
 // Trier les vêtements par catégorie
 
-2 requêtes impliquant plus de 2 tables:
+5 requêtes impliquant plus de 2 tables:
 
 
 DICTIONNAIRE DE DONNEES MERISE

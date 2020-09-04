@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{C6A247E6-9DCE-4A1E-99EA-DE21E1BB5522}" Label="" LastModificationDate="1599222626" Name="bdd_eshop" Objects="5" Symbols="1" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" signature="PRJ_MODEL_XML" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{C6A247E6-9DCE-4A1E-99EA-DE21E1BB5522}" Label="" LastModificationDate="1599227769" Name="bdd_eshop" Objects="5" Symbols="4" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" signature="PRJ_MODEL_XML" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -493,7 +493,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>MCD_ESHOP</a:Code>
 <a:CreationDate>1598959994</a:CreationDate>
 <a:Creator>n.tamanini</a:Creator>
-<a:ModificationDate>1599222624</a:ModificationDate>
+<a:ModificationDate>1599227766</a:ModificationDate>
 <a:Modifier>n.tamanini</a:Modifier>
 <a:Location>file:///%[PRJ_ROOT_DIR]%/MCD_eshop.mcd</a:Location>
 <a:Extension>mcd</a:Extension>
@@ -506,7 +506,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>MLD_ESHOP</a:Code>
 <a:CreationDate>1599150513</a:CreationDate>
 <a:Creator>n.tamanini</a:Creator>
-<a:ModificationDate>1599222626</a:ModificationDate>
+<a:ModificationDate>1599227769</a:ModificationDate>
 <a:Modifier>n.tamanini</a:Modifier>
 <a:Location>file:///%[PRJ_ROOT_DIR]%/MLD_eshop.mpd</a:Location>
 <a:Extension>mpd</a:Extension>
