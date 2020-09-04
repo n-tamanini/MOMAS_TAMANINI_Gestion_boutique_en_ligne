@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{DE36B812-EEA4-4823-B77F-DE803977A186}" Label="" LastModificationDate="1599227610" Name="MLD_eshop" Objects="131" Symbols="22" Target="ORACLE Version 10gR2" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" signature="PDM_DATA_MODEL_XML" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{DE36B812-EEA4-4823-B77F-DE803977A186}" Label="" LastModificationDate="1599227552" Name="MLD_eshop" Objects="131" Symbols="22" Target="ORACLE Version 10gR2" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" signature="PDM_DATA_MODEL_XML" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -4739,16 +4739,14 @@ DAT 1599150513</a:History>
 </o:Table>
 <o:Table Id="o48">
 <a:ObjectID>E9A527FD-DD3E-4E15-BC27-32ED0FD0EE4C</a:ObjectID>
-<a:Name>contient2</a:Name>
-<a:Code>CONTIENT2</a:Code>
+<a:Name>contient_couleur</a:Name>
+<a:Code>CONTIENT_COULEUR</a:Code>
 <a:CreationDate>1599150513</a:CreationDate>
 <a:Creator>n.tamanini</a:Creator>
-<a:ModificationDate>1599227610</a:ModificationDate>
+<a:ModificationDate>1599150513</a:ModificationDate>
 <a:Modifier>n.tamanini</a:Modifier>
 <a:History>ORG {4F2EE74B-1E7B-4BE6-A562-5825299C812E}
-DAT 1599150513
-ATT NAME
-ATT CODE</a:History>
+DAT 1599150513</a:History>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o120">
@@ -4890,16 +4888,14 @@ DAT 1599150513</a:History>
 </o:Table>
 <o:Table Id="o49">
 <a:ObjectID>23555596-7F4A-4C32-A7E4-D7643A82A780</a:ObjectID>
-<a:Name>contient1</a:Name>
-<a:Code>CONTIENT1</a:Code>
+<a:Name>contient_taille</a:Name>
+<a:Code>CONTIENT_TAILLE</a:Code>
 <a:CreationDate>1599150513</a:CreationDate>
 <a:Creator>n.tamanini</a:Creator>
-<a:ModificationDate>1599227605</a:ModificationDate>
+<a:ModificationDate>1599150513</a:ModificationDate>
 <a:Modifier>n.tamanini</a:Modifier>
 <a:History>ORG {32A940D4-1345-49F0-AF83-421C37F205B6}
-DAT 1599150513
-ATT NAME
-ATT CODE</a:History>
+DAT 1599150513</a:History>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o130">
