@@ -69,8 +69,29 @@ DELETE FROM vetement WHERE id_vetement=1;
 DROP TABLE  couleur;
 
 2 requêtes impliquant 2 tables:
+// Supprimer toutes les commandes d'un utilisateur
+DELETE FROM commande 
+	JOIN utilisateur ON utilisateur.id_utilisateur = commande.id_utilisateur 
+	WHERE utilisateur.id_utilisateur = 5;
+
+// Supprimer tous les vêtements dont la catégorie est "pantalon"
+DELETE FROM vetement
+	JOIN categorie ON vetement.id_categorie = categorie.id_categorie
+	WHERE categorie.nom_categorie = "pantalon";
 
 2 requêtes impliquant plus de 2 tables:
+// Supprimer tous les vêtements dont la catégorie est "t-shirt" et la taille est "XXL"
+DELETE FROM vetement
+	JOIN categorie ON vetement.id_categorie = categorie.id_categorie
+	JOIN taille ON vetement.id_taille = taille.id_taille
+	WHERE categorie.nom_categorie = "t-shirt" AND taille.nom_taille = "XXL";
+
+// Supprimer les commandes d'un utilisateur contenant plus de 5 vêtements rouges
+DELETE FROM commande
+	JOIN est_commandé ON commande.id_commande = est_commandé.id_commande
+	JOIN vetement ON est_commandé.id_vetement = vetement.id_vetement
+	JOIN couleur ON vetement.id_couleur = couleur.id_couleur
+	WHERE COUNT(est_commandé.id_vetement) > 5 AND couleur.nom = "rouge";
 
 DESCRIPTION TEXTUELLES DES REQUETES DE CONSULTATION
 
