@@ -3,11 +3,10 @@ Gestion d'une boutique de vêtements en ligne
 DESCRIPTION DU SUJET:
 Nous avons choisis de réaliser un Système de Gestion de Base de Donnée d'un magasin de vêtement en ligne. Ce système de gestion doit pouvoir réaliser les missions suivantes afin de garantir un achat et une livraison correct sur le site de vêtement:
 
-- Gestion des stocks de vêtements  
 
 - Comptes utilisateur (création de compte)
 
-- Gestion des commandes (des vêtements à envoyer et des commandes passées par le client)
+- Gestion des commandes (passées par le client)
 
 - Tri des vêtements par catégorie afin d'améliorer la recherche des vêtements
 
@@ -17,7 +16,7 @@ Service :
 
 - Front office : vente des vêtements / création - connexion compte  
 
-- Back office : gestion des stocks, ajout, modification, suppression des vêtements / gestion des expéditions 
+- Back office : ajout, modification, suppression des vêtements / gestion des expéditions 
 
 
 DESCRIPTION TEXTUELLES DES REQUETES DE MISE A JOUR
