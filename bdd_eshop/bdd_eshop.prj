@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{C6A247E6-9DCE-4A1E-99EA-DE21E1BB5522}" Label="" LastModificationDate="1599228947" Name="bdd_eshop" Objects="7" Symbols="5" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" signature="PRJ_MODEL_XML" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{C6A247E6-9DCE-4A1E-99EA-DE21E1BB5522}" Label="" LastModificationDate="1599564285" Name="bdd_eshop" Objects="5" Symbols="1" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" signature="PRJ_MODEL_XML" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -464,26 +464,6 @@ LABL 0 Arial,8,N</a:FontList>
 <o:ModelDocument Ref="o5"/>
 </c:Object>
 </o:ModelDocumentSymbol>
-<o:ModelDocumentSymbol Id="o6">
-<a:ModificationDate>1599228936</a:ModificationDate>
-<a:IconMode>2</a:IconMode>
-<a:Rect>((-1201,-9159), (1198,-6760))</a:Rect>
-<a:LineColor>12034707</a:LineColor>
-<a:FillColor>16437422</a:FillColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>OBJSTRN 0 Arial,8,N
-DISPNAME 0 Arial,8,N
-LABL 0 Arial,8,N</a:FontList>
-<a:BrushStyle>6</a:BrushStyle>
-<a:GradientFillMode>65</a:GradientFillMode>
-<a:CustomPictureType>4</a:CustomPictureType>
-<a:CustomTextMode>1</a:CustomTextMode>
-<a:GradientEndColor>16777215</a:GradientEndColor>
-<a:KeepAspect>1</a:KeepAspect>
-<c:Object>
-<o:ModelDocument Ref="o7"/>
-</c:Object>
-</o:ModelDocumentSymbol>
 </c:Symbols>
 </o:ProjectDiagram>
 </c:ProjectDiagrams>
@@ -491,73 +471,46 @@ LABL 0 Arial,8,N</a:FontList>
 <o:ProjectDiagram Ref="o3"/>
 </c:DefaultDiagram>
 <c:DependencyLinks>
-<o:DependencyLink Id="o8">
-<a:ObjectID>DEC8AD59-49D0-4A13-928A-119A516787E0</a:ObjectID>
-<a:CreationDate>1599150513</a:CreationDate>
+<o:DependencyLink Id="o6">
+<a:ObjectID>09EDDC01-0FB4-43F4-893E-454B143C0598</a:ObjectID>
+<a:CreationDate>1599564165</a:CreationDate>
 <a:Creator>n.tamanini</a:Creator>
-<a:ModificationDate>1599150513</a:ModificationDate>
+<a:ModificationDate>1599564165</a:ModificationDate>
 <a:Modifier>n.tamanini</a:Modifier>
 <a:DependencyLink.Type>Generation</a:DependencyLink.Type>
 <c:InfluentObjects>
 <o:ModelDocument Ref="o5"/>
 </c:InfluentObjects>
 <c:DependentObjects>
-<o:ModelDocument Ref="o9"/>
-</c:DependentObjects>
-</o:DependencyLink>
-<o:DependencyLink Id="o10">
-<a:ObjectID>67C069E8-EBAE-4529-ADBE-FA0130A7056B</a:ObjectID>
-<a:CreationDate>1599228936</a:CreationDate>
-<a:Creator>n.tamanini</a:Creator>
-<a:ModificationDate>1599228936</a:ModificationDate>
-<a:Modifier>n.tamanini</a:Modifier>
-<a:DependencyLink.Type>Generation</a:DependencyLink.Type>
-<c:InfluentObjects>
 <o:ModelDocument Ref="o7"/>
-</c:InfluentObjects>
-<c:DependentObjects>
-<o:ModelDocument Ref="o9"/>
 </c:DependentObjects>
 </o:DependencyLink>
 </c:DependencyLinks>
 <c:ModelsAndFiles>
-<o:ModelDocument Id="o9">
+<o:ModelDocument Id="o7">
 <a:ObjectID>73DA78A5-88F8-490E-BAE7-73B37C0D8415</a:ObjectID>
 <a:Name>MCD_eshop</a:Name>
 <a:Code>MCD_ESHOP</a:Code>
 <a:CreationDate>1598959994</a:CreationDate>
 <a:Creator>n.tamanini</a:Creator>
-<a:ModificationDate>1599227766</a:ModificationDate>
+<a:ModificationDate>1599564062</a:ModificationDate>
 <a:Modifier>n.tamanini</a:Modifier>
 <a:Location>file:///%[PRJ_ROOT_DIR]%/MCD_eshop.mcd</a:Location>
 <a:Extension>mcd</a:Extension>
 <a:ModelDocument.ModelID>B21AEDB5-57CC-4624-841E-777415138503</a:ModelDocument.ModelID>
 <a:ModelClassID>1E597170-9350-11D1-AB3C-0020AF71E433</a:ModelClassID>
 </o:ModelDocument>
-<o:ModelDocument Id="o7">
-<a:ObjectID>D7C9D23D-D6C5-45A4-BA24-F26D8344AF21</a:ObjectID>
-<a:Name>MLD_eshop_test</a:Name>
-<a:Code>MLD_ESHOP_TEST</a:Code>
-<a:CreationDate>1599228936</a:CreationDate>
-<a:Creator>n.tamanini</a:Creator>
-<a:ModificationDate>1599228947</a:ModificationDate>
-<a:Modifier>n.tamanini</a:Modifier>
-<a:Location>file:///%[PRJ_ROOT_DIR]%/MLD_eshop_test.mpd</a:Location>
-<a:Extension>mpd</a:Extension>
-<a:ModelDocument.ModelID>81D4C9C3-C393-468B-8E82-C28705FB3047</a:ModelDocument.ModelID>
-<a:ModelClassID>CDE44E21-9669-11D1-9914-006097355D9B</a:ModelClassID>
-</o:ModelDocument>
 <o:ModelDocument Id="o5">
-<a:ObjectID>C7A15894-C379-4739-A75B-477BE75CEA89</a:ObjectID>
+<a:ObjectID>C4DB94CE-87FB-4637-9CF7-50E7BDDBB2EA</a:ObjectID>
 <a:Name>MLD_eshop</a:Name>
 <a:Code>MLD_ESHOP</a:Code>
-<a:CreationDate>1599150513</a:CreationDate>
+<a:CreationDate>1599564165</a:CreationDate>
 <a:Creator>n.tamanini</a:Creator>
-<a:ModificationDate>1599227769</a:ModificationDate>
+<a:ModificationDate>1599564285</a:ModificationDate>
 <a:Modifier>n.tamanini</a:Modifier>
 <a:Location>file:///%[PRJ_ROOT_DIR]%/MLD_eshop.mpd</a:Location>
 <a:Extension>mpd</a:Extension>
-<a:ModelDocument.ModelID>DE36B812-EEA4-4823-B77F-DE803977A186</a:ModelDocument.ModelID>
+<a:ModelDocument.ModelID>06F29667-F001-4282-B3EF-F79D526C2AA6</a:ModelDocument.ModelID>
 <a:ModelClassID>CDE44E21-9669-11D1-9914-006097355D9B</a:ModelClassID>
 </o:ModelDocument>
 </c:ModelsAndFiles>
