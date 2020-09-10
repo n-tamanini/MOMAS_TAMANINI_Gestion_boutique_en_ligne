@@ -143,14 +143,17 @@ WHERE prix = 30;
 
 5 requêtes impliquant 2 tables avec jointures internes dont 1 externe + 1 group by + 1 tri : 
 
-//Calcul du prix des commandes qu’a passé un utilisateur
+// Donner le prix des commande regroupé par chaque utilisateur (GROUP BY)
 
 SELECT utilisateur.nom, SUM(commande_prix) 
 FROM utilisateur
 JOIN commande ON utilisateur.id_utilisateur = commande.id_utilisateur
 GROUP BY utilisateur.nom
 
-// Trier les vêtements par la couleur rouge
+// Donner la liste d'id des vêtements et leur prix qui ont une couleur couleur rouge. Pour ceux qui n'ont pas de couleur rouge, leur nom sera simplement affiché.
+
+SELECT 	id_vetement, nom_couleur 
+FROM déclinaison RIGHT OUTER JOIN couleur ON declinaison.id-couleur = couleur.id_couleur;
 
 
 // Trier les vêtements par catégorie
