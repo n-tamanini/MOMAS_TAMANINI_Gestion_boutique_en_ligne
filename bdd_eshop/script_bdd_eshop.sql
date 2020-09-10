@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* Nom de SGBD :  ORACLE Version 10gR2                          */
-/* Date de création :  08/09/2020 13:54:21                      */
+/* Date de création :  10/09/2020 10:24:43                      */
 /*==============================================================*/
 
 
@@ -71,7 +71,7 @@ drop table VETEMENT cascade constraints;
 /* Table : CATEGORIE                                            */
 /*==============================================================*/
 create table CATEGORIE  (
-   ID_CATEGORIE         NUMBER(4)       not null      AUTO_INCREMENT
+   ID_CATEGORIE         NUMBER(4)                       not null
       constraint CKC_ID_CATEGORIE_CATEGORI check (ID_CATEGORIE >= 1),
    NOM_CATEGORIE        VARCHAR2(30)                    not null,
    constraint PK_CATEGORIE primary key (ID_CATEGORIE)
@@ -81,7 +81,7 @@ create table CATEGORIE  (
 /* Table : CHOISIT                                              */
 /*==============================================================*/
 create table CHOISIT  (
-   ID_DECLINAISON       NUMBER(4)         not null     AUTO_INCREMENT
+   ID_DECLINAISON       NUMBER(4)                       not null
       constraint CKC_ID_DECLINAISON_CHOISIT check (ID_DECLINAISON >= 1),
    ID_UTILISATEUR       NUMBER(4)                       not null
       constraint CKC_ID_UTILISATEUR_CHOISIT check (ID_UTILISATEUR >= 1),
@@ -106,7 +106,7 @@ create index CHOISIT2_FK on CHOISIT (
 /* Table : COMMANDE                                             */
 /*==============================================================*/
 create table COMMANDE  (
-   ID_COMMANDE          NUMBER(4)      not null     AUTO_INCREMENT
+   ID_COMMANDE          NUMBER(4)                       not null
       constraint CKC_ID_COMMANDE_COMMANDE check (ID_COMMANDE >= 1),
    ID_UTILISATEUR       NUMBER(4)                       not null
       constraint CKC_ID_UTILISATEUR_COMMANDE check (ID_UTILISATEUR >= 1),
@@ -127,7 +127,7 @@ create index PASSE_FK on COMMANDE (
 /* Table : COULEUR                                              */
 /*==============================================================*/
 create table COULEUR  (
-   ID_COULEUR           NUMBER(4)      not null    AUTO_INCREMENT
+   ID_COULEUR           NUMBER(4)                       not null
       constraint CKC_ID_COULEUR_COULEUR check (ID_COULEUR >= 1),
    NOM_COULEUR          VARCHAR2(30),
    constraint PK_COULEUR primary key (ID_COULEUR)
@@ -137,7 +137,7 @@ create table COULEUR  (
 /* Table : DECLINAISON_VETEMENT                                 */
 /*==============================================================*/
 create table DECLINAISON_VETEMENT  (
-   ID_DECLINAISON       NUMBER(4)        not null   AUTO_INCREMENT
+   ID_DECLINAISON       NUMBER(4)                       not null
       constraint CKC_ID_DECLINAISON_DECLINAI check (ID_DECLINAISON >= 1),
    ID_COULEUR           NUMBER(4)                       not null
       constraint CKC_ID_COULEUR_DECLINAI check (ID_COULEUR >= 1),
@@ -204,7 +204,7 @@ create index EST_COMMANDE2_FK on EST_COMMANDE (
 /* Table : TAILLE                                               */
 /*==============================================================*/
 create table TAILLE  (
-   ID_TAILLE            NUMBER(4)      not null       AUTO_INCREMENT
+   ID_TAILLE            NUMBER(4)                       not null
       constraint CKC_ID_TAILLE_TAILLE check (ID_TAILLE between 1 and 6),
    NOM_TAILLE           VARCHAR2(30)                    not null,
    constraint PK_TAILLE primary key (ID_TAILLE)
@@ -214,7 +214,7 @@ create table TAILLE  (
 /* Table : UTILISATEUR                                          */
 /*==============================================================*/
 create table UTILISATEUR  (
-   ID_UTILISATEUR       NUMBER(4)    not null       AUTO_INCREMENT
+   ID_UTILISATEUR       NUMBER(4)                       not null
       constraint CKC_ID_UTILISATEUR_UTILISAT check (ID_UTILISATEUR >= 1),
    NOM_UTILISATEUR      CHAR(30)                        not null,
    PRENOM_UTILISATEUR   VARCHAR2(30)                    not null,
@@ -228,7 +228,7 @@ create table UTILISATEUR  (
 /* Table : VETEMENT                                             */
 /*==============================================================*/
 create table VETEMENT  (
-   ID_VETEMENT          NUMBER(4)   not null       AUTO_INCREMENT
+   ID_VETEMENT          NUMBER(4)                       not null
       constraint CKC_ID_VETEMENT_VETEMENT check (ID_VETEMENT >= 1),
    ID_CATEGORIE         NUMBER(4)                       not null
       constraint CKC_ID_CATEGORIE_VETEMENT check (ID_CATEGORIE >= 1),
