@@ -2,11 +2,11 @@
 	   BACKEND
 ################################
 
-Pour la partie backend de notre site, nous avons utilisé WAMP
+Pour la partie backend de notre site, nous avons utilisé WAMP.
 
-INSTRUCTIONS POUR INSTALLER LA PARTIE BACKEND:
+INSTRUCTIONS POUR INSTALLER LA PARTIE BACKEND :
 
---> Copiez le dossier "backend_eshop" dans le répertoire www de WAMP et lancez Wampserver
+--> Copiez le dossier "backend_eshop" dans le répertoire www de WAMP et lancez Wampserver.
 
 ################################
 	   FRONTEND
@@ -14,7 +14,7 @@ INSTRUCTIONS POUR INSTALLER LA PARTIE BACKEND:
 
 Pour la partie front-end de notre site, nous avons choisi d'utiliser le framework Angular.
 
-INSTRUCTIONS POUR DEPLOYER NOTRE SITE EN LOCAL:
+INSTRUCTIONS POUR DEPLOYER NOTRE SITE EN LOCAL :
 
 1. Installer NodeJS (version 12.18.3 LTS)
 --> https://nodejs.org
