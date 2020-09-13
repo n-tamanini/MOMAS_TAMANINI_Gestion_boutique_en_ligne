@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService, Policy } from '../../api.service';
+import { ApiService, Categorie } from '../../api.service';
 import { FuseConfigService } from '@fuse/services/config.service';
 
 
@@ -10,8 +10,8 @@ import { FuseConfigService } from '@fuse/services/config.service';
 })
 export class DashboardComponent implements OnInit {
 
-  policies:  Policy[];
-  selectedPolicy:  Policy  = { id :  null , number:null, amount:  null};
+  categories:  Categorie[];
+  //selectedPolicy:  Policy  = { id :  null , number:null, amount:  null};
 
   constructor
   (
@@ -39,12 +39,12 @@ export class DashboardComponent implements OnInit {
  }
 
   ngOnInit() {
-    this.apiService.readPolicies().subscribe((policies: Policy[])=>{
-      this.policies = policies;
-      console.log(this.policies);
+    this.apiService.readCategories().subscribe((categories: Categorie[])=>{
+      this.categories = categories;
+      console.log(this.categories);
     })
   }
-
+/*
   createOrUpdatePolicy(form){
     if(this.selectedPolicy && this.selectedPolicy.id){
       form.value.id = this.selectedPolicy.id;
@@ -70,6 +70,6 @@ export class DashboardComponent implements OnInit {
       console.log("Policy deleted, ", policy);
     });
   }
-
+*/
   
 }

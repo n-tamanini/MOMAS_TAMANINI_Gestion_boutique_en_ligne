@@ -6,13 +6,14 @@ import { Observable } from 'rxjs';
     providedIn: 'root'
 })
 export class ApiService {
-    PHP_API_SERVER = "http://localhost/site_eshop";
+    PHP_API_SERVER = "http://localhost/backend_eshop";
 
     constructor(private httpClient: HttpClient) { }
 
-    readPolicies(): Observable<Policy[]> {
-        return this.httpClient.get<Policy[]>(`${this.PHP_API_SERVER}/read.php`);
+    readCategories(): Observable<Categorie[]> {
+        return this.httpClient.get<Categorie[]>(`${this.PHP_API_SERVER}/read.php`);
     }
+    /*
     createPolicy(policy: Policy): Observable<Policy> {
         return this.httpClient.post<Policy>(`${this.PHP_API_SERVER}/create.php`, policy);
     }
@@ -24,13 +25,13 @@ export class ApiService {
     deletePolicy(id: number) {
         return this.httpClient.delete<Policy>(`${this.PHP_API_SERVER}/delete.php/?id=${id}`);
     }
+    */
 
 }
 
-export class Policy {
-    id: number;
-    number: number;
-    amount: number;
+export class Categorie {
+    id_categorie: number;
+    nom_categorie: string;
 }
 
 
