@@ -17,20 +17,14 @@ export class ApiService {
     getDeclinaisons(): Observable<Declinaison[]> {
         return this.httpClient.get<Declinaison[]>(`${this.PHP_API_SERVER}/declinaison/all.php`);
     }
-    /*
-    createPolicy(policy: Policy): Observable<Policy> {
-        return this.httpClient.post<Policy>(`${this.PHP_API_SERVER}/create.php`, policy);
+
+    getTailles(): Observable<Taille[]> {
+        return this.httpClient.get<Taille[]>(`${this.PHP_API_SERVER}/taille/all.php`);
     }
 
-    updatePolicy(policy: Policy) {
-        return this.httpClient.put<Policy>(`${this.PHP_API_SERVER}/update.php`, policy);
+    getCouleurs(): Observable<Couleur[]> {
+        return this.httpClient.get<Couleur[]>(`${this.PHP_API_SERVER}/couleur/all.php`);
     }
-
-    deletePolicy(id: number) {
-        return this.httpClient.delete<Policy>(`${this.PHP_API_SERVER}/delete.php/?id=${id}`);
-    }
-    */
-
 }
 
 export class Categorie {
@@ -38,15 +32,41 @@ export class Categorie {
     nom_categorie: string;
 }
 
+export class Taille {
+    id_taille: number;
+    nom_taille: string;
+}
+
+export class Couleur {
+    id_couleur: number;
+    nom_couleur: string;
+}
+
 export class Declinaison {
     id_declinaison: number;
-    id_couleur: number;
+    couleur: {
+        id_couleur:number;
+        nom_couleur:string;
+    }
+    vetement: {
+        id_vetement: number;
+        nom_vetement: string;
+        description_vetement: string;
+        categorie: {
+            id_categorie:number;
+            nom_categorie:string;
+        }
+    }
+    taille: {
+        id_taille:number;
+        nom_taille:string;
+    }
     id_vetement: number;
-    id_taille: number;
     prix_declinaison: number;
     quantite_declinaison: number;
-
 }
+
+
 
 
 

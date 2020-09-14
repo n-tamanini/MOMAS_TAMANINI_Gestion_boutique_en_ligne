@@ -1,4 +1,4 @@
-<div fxLayout="column" class="page-layout simple" id="dashboard">
+<div fxLayout="column" class="page-layout simple tabbed" id="dashboard">
 
   <!-- HEADER -->
   <div class="header accent p-24 h-160" fxLayout="column" fxLayoutAlign="space-between">
@@ -10,8 +10,84 @@
         <span class="secondary-text">Accueil</span>
       </div>
       <div class="h1 mt-16" [@animate]="{value:'*',params:{x:'50px'}}">Accueil</div>
+
+      <div fxLayout="row" class="menu" style="display: flex;">
+
+        <div fxLayout="row" class="filter-menu">
+          <div class="filter-name">Catégorie</div>
+          <div *ngIf="selectedCategorie != undefined" class="selected-filter">{{selectedCategorie.nom_categorie}}</div>
+
+          <button mat-icon-button class="filter-selector" [matMenuTriggerFor]="categoriesMenu"
+            aria-label="Select category">
+            <mat-icon>expand_more</mat-icon>
+          </button>
+
+          <mat-menu #categoriesMenu="matMenu">
+            <button mat-menu-item *ngFor="let categorie of categories; let i=index" (click)="onCategorieSelection(i)">
+              <span>{{categorie.nom_categorie}}</span>
+            </button>
+          </mat-menu>
+        </div>
+
+        <div fxLayout="row" class="filter-menu" style="margin-left: 10px;">
+          <div class="filter-name">Taille</div>
+          <div *ngIf="selectedTaille != undefined" class="selected-filter">{{selectedTaille.nom_taille}}</div>
+
+          <button mat-icon-button class="filter-selector" [matMenuTriggerFor]="taillesMenu" aria-label="Select taille">
+            <mat-icon>expand_more</mat-icon>
+          </button>
+
+          <mat-menu #taillesMenu="matMenu">
+            <button mat-menu-item *ngFor="let taille of tailles; let i=index" (click)="onTailleSelection(i)">
+              <span>{{taille.nom_taille}}</span>
+            </button>
+          </mat-menu>
+        </div>
+
+        <div fxLayout="row" class="filter-menu" style="margin-left: 10px;">
+          <div class="filter-name">Couleur</div>
+          <div *ngIf="selectedCouleur != undefined" class="selected-filter">{{selectedCouleur.nom_couleur}}</div>
+
+          <button mat-icon-button class="filter-selector" [matMenuTriggerFor]="couleursMenu"
+            aria-label="Select couleur">
+            <mat-icon>expand_more</mat-icon>
+          </button>
+
+          <mat-menu #couleursMenu="matMenu">
+            <button mat-menu-item *ngFor="let couleur of couleurs; let i=index" (click)="onCouleurSelection(i)">
+              <span>{{couleur.nom_couleur}}</span>
+            </button>
+          </mat-menu>
+        </div>
+
+      </div>
     </div>
-    <!-- / HEADER -->
+
   </div>
+  <!-- / HEADER -->
+
+  <div class="p-12" *ngIf="declinaisons != undefined">
+    <table mat-table>
+      <tr>
+        <th>id_vetement</th>
+        <th>Catégorie</th>
+        <th>Taille</th>
+        <th>Couleur</th>
+        <th>Prix</th>
+        <th>Quantité</th>
+      </tr>
+
+      <tr *ngFor="let declinaison of declinaisons">
+        <td>{{ declinaison.id_declinaison }}</td>
+        <td>{{ declinaison.vetement.categorie.nom_categorie }}</td>
+        <td>{{ declinaison.taille.nom_taille }}</td>
+        <td>{{ declinaison.couleur.nom_couleur }}</td>
+        <td>{{ declinaison.prix_declinaison }} €</td>
+        <td>{{ declinaison.quantite_declinaison }}</td>
+      </tr>
+  
+    </table>
+</div>
 
 </div>
+<!--END -->

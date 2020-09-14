@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { fuseAnimations } from '@fuse/animations';
-import { ApiService, Categorie, Declinaison } from '../../api.service';
+import { ApiService, Categorie, Couleur, Declinaison, Taille } from '../../api.service';
 import { FuseConfigService } from '@fuse/services/config.service';
 
 
@@ -15,6 +15,12 @@ export class DashboardComponent implements OnInit {
 
   categories: Categorie[];
   declinaisons: Declinaison[];
+  tailles: Taille[];
+  couleurs: Couleur[];
+
+  selectedCategorie: Categorie;
+  selectedTaille: Taille;
+  selectedCouleur: Couleur;
 
   constructor
     (
@@ -43,46 +49,41 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.apiService.getCategories().subscribe((categories: Categorie[]) => {
       this.categories = categories;
+      this.selectedCategorie = this.categories[0];
       console.log(this.categories);
+    });
+
+    this.apiService.getTailles().subscribe((tailles: Taille[]) => {
+      this.tailles = tailles;
+      this.selectedTaille = this.tailles[0];
+      console.log(this.tailles);
+    });
+
+    this.apiService.getCouleurs().subscribe((couleurs: Couleur[]) => {
+      this.couleurs = couleurs;
+      this.selectedCouleur = this.couleurs[0];
+      console.log(this.couleurs);
     });
 
     this.apiService.getDeclinaisons().subscribe((declinaisons: Declinaison[]) => {
       this.declinaisons = declinaisons;
       console.log(this.declinaisons);
     });
+
+
+  }
+
+  onCategorieSelection(index_categorie: number) {
+    this.selectedCategorie = this.categories[index_categorie];
+  }
+
+  onTailleSelection(index_taille: number){
+    this.selectedTaille = this.tailles[index_taille];
+  }
+
+  onCouleurSelection(index_couleur: number){
+    this.selectedCouleur = this.couleurs[index_couleur];
   }
 }
 
-
-
-
-
-
-/*
-  createOrUpdatePolicy(form){
-    if(this.selectedPolicy && this.selectedPolicy.id){
-      form.value.id = this.selectedPolicy.id;
-      this.apiService.updatePolicy(form.value).subscribe((policy: Policy)=>{
-        console.log("Policy updated" , policy);
-      });
-    }
-    else{
-
-      this.apiService.createPolicy(form.value).subscribe((policy: Policy)=>{
-        console.log("Policy created, ", policy);
-      });
-    }
-
-  }
-
-  selectPolicy(policy: Policy){
-    this.selectedPolicy = policy;
-  }
-
-  deletePolicy(id){
-    this.apiService.deletePolicy(id).subscribe((policy: Policy)=>{
-      console.log("Policy deleted, ", policy);
-    });
-  }
-*/
 
