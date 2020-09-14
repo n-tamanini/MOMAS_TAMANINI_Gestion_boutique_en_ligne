@@ -1,49 +1,63 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService, Categorie } from '../../api.service';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { fuseAnimations } from '@fuse/animations';
+import { ApiService, Categorie, Declinaison } from '../../api.service';
 import { FuseConfigService } from '@fuse/services/config.service';
 
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
+  animations: fuseAnimations,
+  encapsulation: ViewEncapsulation.None
 })
 export class DashboardComponent implements OnInit {
 
-  categories:  Categorie[];
-  //selectedPolicy:  Policy  = { id :  null , number:null, amount:  null};
+  categories: Categorie[];
+  declinaisons: Declinaison[];
 
   constructor
-  (
-    private apiService: ApiService,
-    private _fuseConfigService: FuseConfigService,
-) 
-{
-     // Configure the layout
-     this._fuseConfigService.config = {
+    (
+      private apiService: ApiService,
+      private _fuseConfigService: FuseConfigService,
+  ) {
+    // Configure the layout
+    this._fuseConfigService.config = {
       layout: {
-          navbar: {
-              hidden: false
-          },
-          toolbar: {
-              hidden: true
-          },
-          footer: {
-              hidden: true
-          },
-          sidepanel: {
-              hidden: true
-          }
+        navbar: {
+          hidden: false
+        },
+        toolbar: {
+          hidden: true
+        },
+        footer: {
+          hidden: true
+        },
+        sidepanel: {
+          hidden: true
+        }
       }
-  };
- }
+    };
+  }
 
   ngOnInit() {
-    this.apiService.readCategories().subscribe((categories: Categorie[])=>{
+    this.apiService.getCategories().subscribe((categories: Categorie[]) => {
       this.categories = categories;
       console.log(this.categories);
-    })
+    });
+
+    this.apiService.getDeclinaisons().subscribe((declinaisons: Declinaison[]) => {
+      this.declinaisons = declinaisons;
+      console.log(this.declinaisons);
+    });
   }
+}
+
+
+
+
+
+
 /*
   createOrUpdatePolicy(form){
     if(this.selectedPolicy && this.selectedPolicy.id){
@@ -71,5 +85,4 @@ export class DashboardComponent implements OnInit {
     });
   }
 */
-  
-}
+

@@ -10,8 +10,12 @@ export class ApiService {
 
     constructor(private httpClient: HttpClient) { }
 
-    readCategories(): Observable<Categorie[]> {
-        return this.httpClient.get<Categorie[]>(`${this.PHP_API_SERVER}/read.php`);
+    getCategories(): Observable<Categorie[]> {
+        return this.httpClient.get<Categorie[]>(`${this.PHP_API_SERVER}/categorie.php`);
+    }
+
+    getDeclinaisons(): Observable<Declinaison[]> {
+        return this.httpClient.get<Declinaison[]>(`${this.PHP_API_SERVER}/declinaison/all.php`);
     }
     /*
     createPolicy(policy: Policy): Observable<Policy> {
@@ -32,6 +36,16 @@ export class ApiService {
 export class Categorie {
     id_categorie: number;
     nom_categorie: string;
+}
+
+export class Declinaison {
+    id_declinaison: number;
+    id_couleur: number;
+    id_vetement: number;
+    id_taille: number;
+    prix_declinaison: number;
+    quantite_declinaison: number;
+
 }
 
 

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
+import { MatIconModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from  '@angular/forms';
@@ -16,7 +17,8 @@ const routes = [
     CommonModule,
     RouterModule.forChild(routes),
     HttpClientModule, 
-    FormsModule
+    FormsModule,
+    MatIconModule
   ]
 })
 export class DashboardModule { }

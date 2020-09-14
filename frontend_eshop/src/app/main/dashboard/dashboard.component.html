@@ -1,22 +1,17 @@
-<div fxLayout="column" class="p-12">
+<div fxLayout="column" class="page-layout simple" id="dashboard">
 
-  <h1>Categories</h1>
+  <!-- HEADER -->
+  <div class="header accent p-24 h-160" fxLayout="column" fxLayoutAlign="space-between">
 
-  <table mat-table width='100%' style='border-collapse: collapse;'>
-    <tr>
-      <th>id_categorie</th>
-      <th>nom_categorie</th>
-    </tr>
-    <tr *ngFor="let categorie of categories">
-      <td>{{ categorie.id_categorie }}</td>
-      <td>{{ categorie.nom_categorie }}</td>
-      <!--
-      <td>
-        <button (click)="deletePolicy(policy.id)">Delete</button>
-        <button (click)="selectPolicy(policy)">Update</button>
-      </td>
-      -->
-    </tr>
-  </table>
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="column" fxLayoutAlign.gt-xs="center start">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <mat-icon class="secondary-text s-18">home</mat-icon>
+        <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
+        <span class="secondary-text">Accueil</span>
+      </div>
+      <div class="h1 mt-16" [@animate]="{value:'*',params:{x:'50px'}}">Accueil</div>
+    </div>
+    <!-- / HEADER -->
+  </div>
 
-<div>
+</div>
