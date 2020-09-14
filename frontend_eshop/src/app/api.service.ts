@@ -11,7 +11,7 @@ export class ApiService {
     constructor(private httpClient: HttpClient) { }
 
     getCategories(): Observable<Categorie[]> {
-        return this.httpClient.get<Categorie[]>(`${this.PHP_API_SERVER}/categorie.php`);
+        return this.httpClient.get<Categorie[]>(`${this.PHP_API_SERVER}/categorie/all.php`);
     }
 
     getDeclinaisons(): Observable<Declinaison[]> {

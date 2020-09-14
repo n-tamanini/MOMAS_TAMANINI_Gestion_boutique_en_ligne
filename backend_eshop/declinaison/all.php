@@ -35,13 +35,35 @@ if ($stid){
       {
         $declinaison->vetement = new stdClass();
         $declinaison->vetement->id_vetement = $row_vetement['ID_VETEMENT'];
-        $declinaison->vetement->id_categorie = $row_vetement['ID_CATEGORIE'];
        /* $declinaison->vetement->nom_vetement = htmlentities($row_vetement['NOM_VETEMENT']);
         $declinaison->vetement->description_vetement = htmlentities($row_vetement['DESCRIPTION_VETEMENT']);*/
+
+        $sql_categorie = "SELECT id_categorie, nom_categorie FROM categorie WHERE ID_CATEGORIE={$row_vetement['ID_CATEGORIE']}";
+        $stid_categorie = oci_parse($con, $sql_categorie);
+        oci_execute($stid_categorie);
+        if ($stid_categorie){
+          while(($row_categorie = oci_fetch_array($stid_categorie, OCI_ASSOC+OCI_RETURN_NULLS)))
+        {
+            $declinaison->vetement->categorie = new stdClass();
+            $declinaison->vetement->categorie->id_categorie = $row_categorie['ID_CATEGORIE'];
+            $declinaison->vetement->categorie->nom_categorie = $row_categorie['NOM_CATEGORIE'];
+          }
+        }
       }
     }
 
-    $declinaison->id_taille = $row['ID_TAILLE'];
+    $sql_taille = "SELECT id_taille, nom_taille FROM taille WHERE ID_TAILLE={$row['ID_TAILLE']}";
+    $stid_taille = oci_parse($con, $sql_taille);
+    oci_execute($stid_taille);
+    if ($stid_taille){
+      while(($row_taille = oci_fetch_array($stid_taille, OCI_ASSOC+OCI_RETURN_NULLS)))
+      {
+        $declinaison->taille = new stdClass();
+        $declinaison->taille->id_taille = $row_taille['ID_TAILLE'];
+        $declinaison->taille->nom_taille = $row_taille['NOM_TAILLE'];
+      }
+    }
+
     $declinaison->prix_declinaison = $row['PRIX_DECLINAISON'];
     $declinaison->quantite_declinaison = $row['QUANTITE_DECLINAISON'];
 
@@ -49,7 +71,6 @@ if ($stid){
   }
 
   echo json_encode($declinaisons);
-
 
 } else
 {
