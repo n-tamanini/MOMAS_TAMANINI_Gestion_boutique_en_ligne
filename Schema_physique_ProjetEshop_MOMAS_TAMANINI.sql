@@ -93,6 +93,7 @@ create table CHOISIT  (
 /*==============================================================*/
 create index CHOISIT_FK on CHOISIT (
    ID_DECLINAISON ASC
+
 );
 
 /*==============================================================*/
@@ -246,37 +247,46 @@ create index APPARTIENT_A_FK on VETEMENT (
 
 alter table CHOISIT
    add constraint FK_CHOISIT_CHOISIT_DECLINAI foreign key (ID_DECLINAISON)
-      references DECLINAISON_VETEMENT (ID_DECLINAISON);
+      references DECLINAISON_VETEMENT (ID_DECLINAISON)
+      on delete cascade;
 
 alter table CHOISIT
    add constraint FK_CHOISIT_CHOISIT2_UTILISAT foreign key (ID_UTILISATEUR)
-      references UTILISATEUR (ID_UTILISATEUR);
+      references UTILISATEUR (ID_UTILISATEUR)
+      on delete cascade;
 
 alter table COMMANDE
    add constraint FK_COMMANDE_PASSE_UTILISAT foreign key (ID_UTILISATEUR)
-      references UTILISATEUR (ID_UTILISATEUR);
+      references UTILISATEUR (ID_UTILISATEUR)
+      on delete cascade;
 
 alter table DECLINAISON_VETEMENT
    add constraint FK_DECLINAI_EST_DECLI_VETEMENT foreign key (ID_VETEMENT)
-      references VETEMENT (ID_VETEMENT);
+      references VETEMENT (ID_VETEMENT)
+      on delete cascade;
 
 alter table DECLINAISON_VETEMENT
    add constraint FK_DECLINAI_EST_DECLI_TAILLE foreign key (ID_TAILLE)
-      references TAILLE (ID_TAILLE);
+      references TAILLE (ID_TAILLE)
+      on delete cascade;
 
 alter table DECLINAISON_VETEMENT
    add constraint FK_DECLINAI_SE_DECLIN_COULEUR foreign key (ID_COULEUR)
-      references COULEUR (ID_COULEUR);
+      references COULEUR (ID_COULEUR)
+      on delete cascade;
 
 alter table EST_COMMANDE
    add constraint FK_EST_COMM_EST_COMMA_DECLINAI foreign key (ID_DECLINAISON)
-      references DECLINAISON_VETEMENT (ID_DECLINAISON);
+      references DECLINAISON_VETEMENT (ID_DECLINAISON)
+      on delete cascade;
 
 alter table EST_COMMANDE
    add constraint FK_EST_COMM_EST_COMMA_COMMANDE foreign key (ID_COMMANDE)
-      references COMMANDE (ID_COMMANDE);
+      references COMMANDE (ID_COMMANDE)
+      on delete cascade;
 
 alter table VETEMENT
    add constraint FK_VETEMENT_APPARTIEN_CATEGORI foreign key (ID_CATEGORIE)
-      references CATEGORIE (ID_CATEGORIE);
+      references CATEGORIE (ID_CATEGORIE)
+      on delete cascade;
 

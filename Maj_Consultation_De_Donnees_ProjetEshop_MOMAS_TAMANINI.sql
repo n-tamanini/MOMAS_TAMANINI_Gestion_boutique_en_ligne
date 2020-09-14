@@ -30,26 +30,26 @@ UPDATE declinaison_vetement dv JOIN couleur c ON dv.id_couleur= c.id_couleur JOI
 -- 2 requêtes impliquant 1 table :
 
 -- Supprimer une ligne de la table declinaison_vetement (suppression d'un vêtement)
-DELETE FROM declinaison_vetement WHERE id_declinaison = 1; -- FONCTIONNE PAS
+DELETE FROM declinaison_vetement WHERE id_declinaison = 1;
 
 -- Supprimer toutes les vêtements dont le prix est supérieur à 50€
-DELETE FROM declinaison_vetement WHERE prix_declinaison > 50; -- FONCTIONNE PAS
+DELETE FROM declinaison_vetement WHERE prix_declinaison > 50;
 
 -- 2 requêtes impliquant 2 tables:
 
 -- Supprimer toutes les commandes d'un utilisateur
-DELETE FROM commande JOIN utilisateur ON utilisateur.id_utilisateur = commande.id_utilisateur WHERE utilisateur.id_utilisateur = 5; -- FONCTIONNE PAS
+DELETE (SELECT * FROM commande JOIN utilisateur ON utilisateur.id_utilisateur = commande.id_utilisateur WHERE utilisateur.id_utilisateur = 5);
 
 -- Supprimer tous les vêtements dont la taille est 'M'
-DELETE FROM declinaison_vetement JOIN taille ON declinaison_vetement.id_taille = taille.id_taille WHERE taille.nom_taille = 'M'; -- FONCTIONNE PAS
+DELETE (SELECT * FROM declinaison_vetement JOIN taille ON declinaison_vetement.id_taille = taille.id_taille WHERE taille.nom_taille = 'M');
 
 -- 2 requêtes impliquant plus de 2 tables :
 
 -- Supprimer tous les vêtements dont la catégorie est "T-shirt" 
-DELETE FROM declinaison_vetement JOIN vetement ON declinaison_vetement.id_vetement = vetement.id_vetement JOIN categorie ON vetement.id_categorie = categorie.id_categorie WHERE categorie.nom_categorie = 'T-shirt'; -- FONCTIONNE PAS
+DELETE (SELECT * FROM declinaison_vetement JOIN vetement ON declinaison_vetement.id_vetement = vetement.id_vetement JOIN categorie ON vetement.id_categorie = categorie.id_categorie WHERE categorie.nom_categorie = 'T-shirt');
 
 --Supprimer les commandes contenant un vêtement dans la catégorie 'Pantalon'
-DELETE FROM commande JOIN est_commande ON commande.id_commande = est_commande.id_commande JOIN declinaison_vetement ON est_commande.id_declinaison = declinaison_vetement.id_declinaison JOIN vetement ON declinaison_vetement.id_vetement = vetement.id_vetement JOIN categorie ON vetement.id_categorie = categorie.id_categorie WHERE categorie.nom_categorie = 'Pantalon'; -- FONCTIONNE PAS
+DELETE (SELECT * FROM commande JOIN est_commande ON commande.id_commande = est_commande.id_commande JOIN declinaison_vetement ON est_commande.id_declinaison = declinaison_vetement.id_declinaison JOIN vetement ON declinaison_vetement.id_vetement = vetement.id_vetement JOIN categorie ON vetement.id_categorie = categorie.id_categorie WHERE categorie.nom_categorie = 'Pantalon');
 
 /*DESCRIPTION TEXTUELLES DES REQUETES DE CONSULTATION*/
 
@@ -106,9 +106,3 @@ SELECT nom_categorie, nom_vetement, id_declinaison FROM vetement LEFT OUTER JOIN
 
 -- Donner la valeur marchande du stock de vêtements par catégorie trié par valeur marchande décroissante
 SELECT categorie.nom_categorie, SUM(declinaison_vetement.prix_declinaison)"Valeur marchande du stock par catégorie" FROM vetement JOIN categorie ON vetement.id_categorie = categorie.id_categorie JOIN declinaison_vetement ON vetement.id_vetement = declinaison_vetement.id_vetement GROUP BY categorie.nom_categorie ORDER BY SUM(declinaison_vetement.prix_declinaison) DESC;
-
-
-
-
-
-
